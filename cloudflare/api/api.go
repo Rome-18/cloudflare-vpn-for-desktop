@@ -10,7 +10,7 @@ import (
 	"wgcf/wireguard"
 )
 
-func Register(encodedPrivateKey string, deviceModel string) (*resp.RegistrationData, error) {
+func Register(encodedPrivateKey string, deviceModel string, referrer string) (*resp.RegistrationData, error) {
 	timestamp := util.GetTimestamp()
 	privateKey, err := wireguard.NewKey(encodedPrivateKey)
 	if err != nil {
@@ -25,6 +25,7 @@ func Register(encodedPrivateKey string, deviceModel string) (*resp.RegistrationD
 		Model:     deviceModel,
 		Type:      "Android",
 		Locale:    "en_US",
+		Referrer:  referrer,
 	}
 	dataBytes, err := json.Marshal(data)
 	if err != nil {
