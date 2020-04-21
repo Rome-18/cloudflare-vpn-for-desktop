@@ -37,7 +37,7 @@ Will change various account settings to ensure WireGuard connection will succeed
 func init() {
 	Cmd.PersistentFlags().StringVarP(&deviceName, "name", "n", "", "Device name displayed under the 1.1.1.1 app (defaults to random)")
 	Cmd.PersistentFlags().StringVarP(&deviceModel, "model", "m", "PC", "Device model displayed under the 1.1.1.1 app")
-	Cmd.PersistentFlags().StringVarP(&referrer, "referrer", "ref", "", "Referrer device ID")
+	Cmd.PersistentFlags().StringVarP(&referrer, "referrer", "r", "", "Referrer device ID")
 	Cmd.PersistentFlags().BoolVar(&existingKey, "existing-key", false, "Use existing private key for the new account")
 	Cmd.PersistentFlags().BoolVar(&acceptedTOS, "accept-tos", false, "Accept Cloudflare's Terms of Service non-interactively")
 }
